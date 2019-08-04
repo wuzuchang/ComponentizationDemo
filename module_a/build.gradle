@@ -1,0 +1,50 @@
+if (rootProject.ext.isComponent) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+android {
+
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        if (rootProject.ext.isComponent) {
+            applicationId 'com.wzc.module_a'
+        }
+        minSdkVersion rootProject.ext.android.defaultConfig.minSdkVersion
+        targetSdkVersion rootProject.ext.android.defaultConfig.targetSdkVersion
+        versionCode rootProject.ext.android.defaultConfig.versionCode
+        versionName rootProject.ext.android.defaultConfig.versionName
+        testInstrumentationRunner rootProject.ext.android.defaultConfig.testInstrumentationRunner
+    }
+
+    sourceSets {
+        main {
+            if (rootProject.ext.isComponent) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+                // 配置组件模式下的java代码主文件(如果出现ClassNotFoundException clean module),这里和Module_C处理方式不一样，所以else里面不需要exclude debug文件夹
+                java.srcDirs 'src/main/java','src/main/debug/java'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation rootProject.ext.dependencies.appcompatV7
+    implementation rootProject.ext.dependencies.constraintLayout
+    testImplementation rootProject.ext.dependencies.junit
+    androidTestImplementation rootProject.ext.dependencies.runner
+    androidTestImplementation rootProject.ext.dependencies.espressoCore
+}
