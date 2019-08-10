@@ -2,5 +2,6 @@
     package="com.wzc.module_b" >
     <application>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".ModuleBSecondActivity"/>
     </application>
 </manifest>

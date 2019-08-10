@@ -3,7 +3,8 @@
     package="com.wzc.module_c">
 
     <application>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ModuleCSecondActivity"/>
     </application>
 
 </manifest>

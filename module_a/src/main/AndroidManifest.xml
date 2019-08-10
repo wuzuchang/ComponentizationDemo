@@ -4,6 +4,7 @@
 
     <application>
         <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ModuleASecondActivity"></activity>
     </application>
 
 </manifest>

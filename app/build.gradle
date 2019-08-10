@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
-
+// 应用WMRouter插件
+apply plugin: 'WMRouter'
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
@@ -25,7 +26,9 @@ dependencies {
     testImplementation rootProject.ext.dependencies.junit
     androidTestImplementation rootProject.ext.dependencies.runner
     androidTestImplementation rootProject.ext.dependencies.espressoCore
-    // isModule = false 表示集成
+    implementation rootProject.ext.dependencies.wmrouter
+    annotationProcessor rootProject.ext.dependencies.wmrouter_compiler
+    // isComponent = false 表示集成
     if (!rootProject.ext.isComponent) {
         //main模块
         implementation project(':module_a')
