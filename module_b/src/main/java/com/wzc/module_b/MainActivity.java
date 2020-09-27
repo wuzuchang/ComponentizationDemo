@@ -8,8 +8,9 @@ import android.widget.Button;
 import com.sankuai.waimai.router.Router;
 import com.sankuai.waimai.router.annotation.RouterUri;
 import com.sankuai.waimai.router.core.UriRequest;
+import com.wzc.base.ARouterPath;
 
-@RouterUri(path = "/module/b/main")
+@RouterUri(path = ARouterPath.ModuleB.Test1)
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btn_open_second;

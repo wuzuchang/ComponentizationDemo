@@ -4,8 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.sankuai.waimai.router.annotation.RouterUri;
+import com.wzc.base.ARouterPath;
 
-@RouterUri(path = "/module/b/second")
+@RouterUri(path = ARouterPath.ModuleB.Test2)
 public class ModuleBSecondActivity extends AppCompatActivity {
 
     @Override

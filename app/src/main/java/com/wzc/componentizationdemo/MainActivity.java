@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.sankuai.waimai.router.Router;
+import com.wzc.base.ARouterPath;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -27,11 +28,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == btn_open_a) {
-            Router.startUri(this, "/module/a/main");
+            Router.startUri(this, ARouterPath.ModuleA.Test1);
         } else if (v == btn_open_b) {
-            Router.startUri(this, "/module/b/main");
+            Router.startUri(this,  ARouterPath.ModuleB.Test1);
         } else if (v == btn_open_c) {
-            Router.startUri(this, "/module/c/main");
+            Router.startUri(this,  ARouterPath.ModuleC.Test1);
         }
     }
 }
