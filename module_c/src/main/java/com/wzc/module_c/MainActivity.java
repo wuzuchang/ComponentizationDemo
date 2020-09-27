@@ -15,6 +15,7 @@ import com.wzc.base.ARouterPath;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btn_open_second;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v==btn_open_second){
-            Router.startUri(new UriRequest(this,"/module/c/second"));
+        if (v == btn_open_second) {
+            Router.startUri(new UriRequest(this, ARouterPath.ModuleC.Test2));
         }
     }
 }

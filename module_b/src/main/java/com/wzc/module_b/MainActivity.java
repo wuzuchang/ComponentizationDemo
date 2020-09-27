@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == btn_open_second) {
-            Router.startUri(new UriRequest(this, "/module/b/second"));
+            Router.startUri(new UriRequest(this, ARouterPath.ModuleB.Test2));
         }
     }
 }

@@ -14,19 +14,24 @@ import com.wzc.base.ARouterPath;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btn_open_second;
+    private Button btn_open_module_b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.module_a_activity_main);
         btn_open_second = findViewById(R.id.module_a_btn_open_second);
+        btn_open_module_b = findViewById(R.id.module_a_btn_open_b);
         btn_open_second.setOnClickListener(this);
+        btn_open_module_b.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         if (v == btn_open_second) {
-            Router.startUri(new UriRequest(this, "/module/a/second"));
+            Router.startUri(new UriRequest(this, ARouterPath.ModuleA.Test2));
+        }else if (v == btn_open_module_b) {
+            Router.startUri(new UriRequest(this, ARouterPath.ModuleB.Test1));
         }
     }
 }
