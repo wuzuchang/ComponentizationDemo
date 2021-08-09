@@ -2,8 +2,7 @@ package com.wzc.componentizationdemo;
 
 import android.app.Application;
 
-import com.sankuai.waimai.router.Router;
-import com.sankuai.waimai.router.common.DefaultRootUriHandler;
+import com.alibaba.android.arouter.launcher.ARouter;
 
 /**
  * Author: Wuzuchang
@@ -14,9 +13,6 @@ public class MainApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        // 创建RootHandler
-        DefaultRootUriHandler rootHandler = new DefaultRootUriHandler(this.getApplicationContext());
-        // 初始化
-        Router.init(rootHandler);
+        ARouter.init(this);
     }
 }

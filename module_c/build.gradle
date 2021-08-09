@@ -1,7 +1,5 @@
 if (rootProject.ext.isComponent) {
     apply plugin: 'com.android.application'
-    // 应用WMRouter插件
-    apply plugin: 'WMRouter'
 } else {
     apply plugin: 'com.android.library'
 }
@@ -25,6 +23,11 @@ android {
     defaultConfig {
         if (rootProject.ext.isComponent) {
             applicationId 'com.wzc.module_c'
+        }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
         }
         minSdkVersion rootProject.ext.android.defaultConfig.minSdkVersion
         targetSdkVersion rootProject.ext.android.defaultConfig.targetSdkVersion
@@ -53,6 +56,5 @@ dependencies {
     androidTestImplementation rootProject.ext.dependencies.runner
     androidTestImplementation rootProject.ext.dependencies.espressoCore
 
-    implementation rootProject.ext.dependencies.wmrouter
-    annotationProcessor rootProject.ext.dependencies.wmrouter_compiler
+    annotationProcessor rootProject.ext.dependencies.arouter_compiler
 }

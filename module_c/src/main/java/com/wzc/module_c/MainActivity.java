@@ -1,17 +1,16 @@
 package com.wzc.module_c;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.sankuai.waimai.router.Router;
-import com.sankuai.waimai.router.annotation.RouterUri;
-import com.sankuai.waimai.router.core.UriRequest;
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.wzc.base.ARouterPath;
 
 
-@RouterUri(path = ARouterPath.ModuleC.Test1)
+@Route(path = ARouterPath.ModuleC.Test1)
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btn_open_second;
@@ -27,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == btn_open_second) {
-            Router.startUri(new UriRequest(this, ARouterPath.ModuleC.Test2));
+            ARouter.getInstance().build(ARouterPath.ModuleC.Test2).navigation();
         }
     }
 }

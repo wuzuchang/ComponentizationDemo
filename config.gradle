@@ -21,7 +21,7 @@ ext {
             junit            : 'junit:junit:4.12',
             runner           : 'com.android.support.test:runner:1.0.2',
             espressoCore     : 'com.android.support.test.espresso:espresso-core:3.0.2',
-            wmrouter         : 'com.sankuai.waimai.router:router:1.2.0',
-            wmrouter_compiler: 'com.sankuai.waimai.router:compiler:1.2.0'
+            arouter          : 'com.alibaba:arouter-api:1.5.1',
+            arouter_compiler : 'com.alibaba:arouter-compiler:1.5.2'
     ]
 }

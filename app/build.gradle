@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
-// 应用WMRouter插件
-apply plugin: 'WMRouter'
+apply plugin: 'com.alibaba.arouter'
+
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
@@ -10,6 +10,11 @@ android {
         versionCode rootProject.ext.android.defaultConfig.versionCode
         versionName rootProject.ext.android.defaultConfig.versionName
         testInstrumentationRunner rootProject.ext.android.defaultConfig.testInstrumentationRunner
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -27,8 +32,6 @@ dependencies {
     testImplementation rootProject.ext.dependencies.junit
     androidTestImplementation rootProject.ext.dependencies.runner
     androidTestImplementation rootProject.ext.dependencies.espressoCore
-    implementation rootProject.ext.dependencies.wmrouter
-    annotationProcessor rootProject.ext.dependencies.wmrouter_compiler
     // isComponent = false 表示集成
     if (!rootProject.ext.isComponent) {
         //main模块

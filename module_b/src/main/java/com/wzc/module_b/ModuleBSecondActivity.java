@@ -3,10 +3,10 @@ package com.wzc.module_b;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.sankuai.waimai.router.annotation.RouterUri;
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.wzc.base.ARouterPath;
 
-@RouterUri(path = ARouterPath.ModuleB.Test2)
+@Route(path = ARouterPath.ModuleB.Test2)
 public class ModuleBSecondActivity extends AppCompatActivity {
 
     @Override
